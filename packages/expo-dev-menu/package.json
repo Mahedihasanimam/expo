@@ -6,7 +6,7 @@
   "types": "build/DevMenu.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "expo-module build",
+    "build": "node init && expo-module build",
     "clean": "expo-module clean",
     "lint": "expo-module lint ./app/*",
     "ts:check": "expo-module tsc --project tsconfig.app.json --noEmit & expo-module tsc --noEmit",
@@ -14,7 +14,7 @@
     "prepare": "expo-module prepare && ./scripts/reset-dev-menu-packager-host.sh",
     "prepublishOnly": "expo-module prepublishOnly",
     "expo-module": "expo-module",
-    "start": "./scripts/start.sh",
+    "start": "node init && ./scripts/start.sh",
     "bundle:dev": "NODE_ENV=development ./scripts/write_embedded_bundle.sh",
     "bundle:prod": "NODE_ENV=production ./scripts/write_embedded_bundle.sh"
   },
