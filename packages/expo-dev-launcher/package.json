@@ -6,7 +6,7 @@
   "main": "build/DevLauncher.js",
   "types": "build/DevLauncher.d.ts",
   "scripts": {
-    "build": "expo-module build",
+    "build": "node init && expo-module build",
     "bundle": "./write_embedded_bundle.sh",
     "clean": "expo-module clean",
     "lint": "expo-module lint bundle && expo-module lint",
@@ -14,7 +14,7 @@
     "prepare": "yarn tsc:bundle && expo-module prepare",
     "prepublishOnly": "yarn tsc:bundle && expo-module prepublishOnly",
     "expo-module": "expo-module",
-    "start": "expo start --port 8090",
+    "start": "node init && expo start --port 8090",
     "link:ios": "xcrun simctl openurl booted",
     "tsc:bundle": "tsc -p bundle/tsconfig.json"
   },
