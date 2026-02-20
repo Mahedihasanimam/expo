@@ -5,8 +5,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "yarn generate-static-resources && next dev -p 3002 --webpack",
-    "build": "yarn copy-latest && NEXT_TELEMETRY_DISABLED=1 SENTRY_SUPPRESS_INSTRUMENTATION_FILE_WARNING=1 next build --webpack && yarn generate-markdown-pages && yarn check-markdown-pages && yarn generate-llms",
+    "dev": "node init && yarn generate-static-resources && next dev -p 3002 --webpack",
+    "build": "node init && yarn copy-latest && NEXT_TELEMETRY_DISABLED=1 SENTRY_SUPPRESS_INSTRUMENTATION_FILE_WARNING=1 next build --webpack && yarn generate-markdown-pages && yarn check-markdown-pages && yarn generate-llms",
     "export": "yarn copy-latest && yarn generate-static-resources production && yarn export-prep && NEXT_TELEMETRY_DISABLED=1 SENTRY_SUPPRESS_INSTRUMENTATION_FILE_WARNING=1 next build --webpack && yarn generate-markdown-pages && yarn check-markdown-pages && yarn generate-llms",
     "export-preview": "yarn copy-latest && yarn generate-static-resources preview && yarn export-prep && NEXT_TELEMETRY_DISABLED=1 SENTRY_SUPPRESS_INSTRUMENTATION_FILE_WARNING=1 next build --webpack && yarn generate-markdown-pages && yarn check-markdown-pages && yarn generate-llms",
     "export-prep": "node ./scripts/export-prep.js",

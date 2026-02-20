@@ -16,7 +16,7 @@
   },
   "sideEffects": false,
   "scripts": {
-    "build": "expo-module build",
+    "build": "node init && expo-module build",
     "clean": "expo-module clean",
     "lint": "expo-module lint && expo-module lint plugin && expo-module lint cli",
     "lint:fix": "expo-module lint --fix && expo-module lint plugin --fix && expo-module lint cli --fix",

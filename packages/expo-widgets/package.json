@@ -5,9 +5,9 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
-    "build": "expo-module build",
-    "build:plugin": "expo-module build plugin",
-    "build:bundle": "node ./scripts/build-bundle.mjs",
+    "build": "node init && expo-module build",
+    "build:plugin": "node init && expo-module build plugin",
+    "build:bundle": "node init && node ./scripts/build-bundle.mjs",
     "clean": "expo-module clean",
     "lint": "expo-module lint",
     "test": "expo-module test",
